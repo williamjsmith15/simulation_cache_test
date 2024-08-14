@@ -1,7 +1,13 @@
 from request_point import request_point
 
-for i in [80, 130, 150]:
-    result, uncertainty = request_point('led_resistance_simple', i, 5)
+values_input = input("Enter values to search, space separated:")
+
+values = [float(x) for x in values_input.split()]
+
+print(f'Running for {values}')
+
+for value in values:
+    result, uncertainty = request_point('led_resistance_simple', value, 5)
 
 # test = {
 #     'supply_voltage': 11,
